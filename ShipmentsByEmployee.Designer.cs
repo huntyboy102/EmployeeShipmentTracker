@@ -173,6 +173,7 @@ namespace EmployeeShipmentTracker
             this.buttonEnter.TabIndex = 13;
             this.buttonEnter.Text = "Enter";
             this.buttonEnter.UseVisualStyleBackColor = true;
+            this.buttonEnter.Click += new System.EventHandler(this.buttonEnterClick);
             // 
             // buttonReset
             // 
@@ -191,11 +192,14 @@ namespace EmployeeShipmentTracker
             this.buttonExit.TabIndex = 15;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // ShipmentsByEmployee
             // 
+            this.AcceptButton = this.buttonEnter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.buttonReset;
             this.ClientSize = new System.Drawing.Size(567, 523);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonReset);

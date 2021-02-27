@@ -51,6 +51,7 @@ namespace EmployeeShipmentTracker
             // 
             // textBoxEmployee1
             // 
+            this.textBoxEmployee1.Enabled = false;
             this.textBoxEmployee1.Location = new System.Drawing.Point(12, 118);
             this.textBoxEmployee1.Multiline = true;
             this.textBoxEmployee1.Name = "textBoxEmployee1";
@@ -95,6 +96,7 @@ namespace EmployeeShipmentTracker
             // 
             // textBoxEmployee2
             // 
+            this.textBoxEmployee2.Enabled = false;
             this.textBoxEmployee2.Location = new System.Drawing.Point(199, 118);
             this.textBoxEmployee2.Multiline = true;
             this.textBoxEmployee2.Name = "textBoxEmployee2";
@@ -114,6 +116,7 @@ namespace EmployeeShipmentTracker
             // 
             // textBoxEmployee3
             // 
+            this.textBoxEmployee3.Enabled = false;
             this.textBoxEmployee3.Location = new System.Drawing.Point(387, 118);
             this.textBoxEmployee3.Multiline = true;
             this.textBoxEmployee3.Name = "textBoxEmployee3";
@@ -139,6 +142,7 @@ namespace EmployeeShipmentTracker
             this.textBoxAverageOfEmployee1.ReadOnly = true;
             this.textBoxAverageOfEmployee1.Size = new System.Drawing.Size(168, 27);
             this.textBoxAverageOfEmployee1.TabIndex = 9;
+            this.textBoxAverageOfEmployee1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxAverageOfEmployee2
             // 
@@ -148,6 +152,7 @@ namespace EmployeeShipmentTracker
             this.textBoxAverageOfEmployee2.ReadOnly = true;
             this.textBoxAverageOfEmployee2.Size = new System.Drawing.Size(168, 27);
             this.textBoxAverageOfEmployee2.TabIndex = 10;
+            this.textBoxAverageOfEmployee2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxAverageOfEmployee3
             // 
@@ -157,6 +162,7 @@ namespace EmployeeShipmentTracker
             this.textBoxAverageOfEmployee3.ReadOnly = true;
             this.textBoxAverageOfEmployee3.Size = new System.Drawing.Size(168, 27);
             this.textBoxAverageOfEmployee3.TabIndex = 11;
+            this.textBoxAverageOfEmployee3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxPerDayAverage
             // 
@@ -166,6 +172,7 @@ namespace EmployeeShipmentTracker
             this.textBoxPerDayAverage.ReadOnly = true;
             this.textBoxPerDayAverage.Size = new System.Drawing.Size(543, 27);
             this.textBoxPerDayAverage.TabIndex = 12;
+            this.textBoxPerDayAverage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // buttonEnter
             // 

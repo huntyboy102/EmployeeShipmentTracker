@@ -12,6 +12,16 @@ namespace EmployeeShipmentTracker
 {
     public partial class ShipmentsByEmployee : Form
     {
+        /*
+         * Name: Hunter Lovering
+         * Date: 2021-02-26
+         * Desc: This program allows the user to enter 7 days worth of shippments for three employees. 
+         * After all numbers for an employee have been entered, the program will determine the average for the amount of
+         * shippments the employee did. When all employees are finished being enter the program will find the average
+         * for all number of days.
+         */
+
+
         // Declare constant variables.
         const int MaxDays = 7;
         const int NumberOfEmployees = 3;
@@ -25,7 +35,7 @@ namespace EmployeeShipmentTracker
 
         // Make arrays for output controls.
         TextBox[] employeeTextBoxes;
-        TextBox[] employeeAveragers;
+        TextBox[] employeeAverages;
 
         public ShipmentsByEmployee()
         {
@@ -33,8 +43,8 @@ namespace EmployeeShipmentTracker
 
             labelDay.Text = "Day: " + day;
 
-            employeeTextBoxes = new TextBox[] { textBoxEmployee1, textBoxEmployee2, textBoxEmployee3 };
-            employeeAveragers = new TextBox[] { textBoxAverageOfEmployee1, textBoxAverageOfEmployee2, textBoxAverageOfEmployee3 };
+            employeeTextBoxes = new TextBox[] { textBoxEmployee1, textBoxEmployee2, textBoxEmployee3};
+            employeeAverages = new TextBox[] { textBoxAverageOfEmployee1, textBoxAverageOfEmployee2, textBoxAverageOfEmployee3};
         }
 
         /// <summary>
@@ -64,36 +74,47 @@ namespace EmployeeShipmentTracker
                         // Declare class level variables
                         // I must say I chose these names before you wrote them out so I swear I'm not copying!
                         int employeeTotal = 0;
-                        int overallTotal = 0;
                         // Calculate the average for employee 1.
-                        for (int dayCounter = 0; dayCounter < NumberOfEmployees; dayCounter++)
+                        for (int dayCounter = 0; dayCounter < MaxDays; dayCounter++)
                         {
                             employeeTotal += employeeShippmentsArray[employee - 1, dayCounter];
                         }
 
-                        employeeAveragers[employee -1].Text = "Average: " + Math.Round((double)employeeTotal / MaxDays, 2);
+                        employeeAverages[employee - 1].Text = "Average: " + Math.Round((double)employeeTotal / MaxDays, 2);
 
                         // Reset the day.
                         day = 1;
                         // Go to the next employee.
                         employee++;
-                        
-
                     }
 
                     // Check if we have reached the maximum number of employees.
                     if (employee > NumberOfEmployees)
                     {
-                        // Disable all appropriate controls and set focus to reset button.
+                        int overallTotal = 0;
+                        // Calculate the average and display it.
+                        for (int employeeCounter = 0; employeeCounter < NumberOfEmployees; employeeCounter++)
+                        {
+                            for (int dayCounter = 0; dayCounter < MaxDays; dayCounter++)
+                            {
+                                overallTotal += employeeShippmentsArray[employeeCounter, dayCounter];
+                            }
+                        }
 
+                        textBoxPerDayAverage.Text = "Average: " + Math.Round((double)overallTotal / 21, 2);
+
+                        // Disable all appropriate controls and set focus to reset button.
                         // Disable the controls.
                         textBoxQuantityShippedEntry.Enabled = false;
                         buttonEnter.Enabled = false;
                         // Set focus to the reset button.
                         buttonReset.Focus();
+                        // Calculate the entire average.
+
                     }
 
                     labelDay.Text = "Day: " + day;
+                    textBoxQuantityShippedEntry.Clear();
                 }
                 else
                 {
